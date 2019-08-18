@@ -1,18 +1,15 @@
-from Tkinter import *
+import kivy
+kivy.require('1.0.6') # replace with your current kivy version !
 
-def Cumprimente():
-    hello.set("Olá, você!")
+from kivy.app import App
+from kivy.uix.label import Label
 
-gui = Tk()
 
-gui.title("Py5 - Python + Tkinter")
-gui.geometry("400x300")
+class MyApp(App):
 
-btn = Button(gui, text="Cumprimente", command=Cumprimente)
-btn.pack()
+    def build(self):
+        return Label(text='Hello world')
 
-hello = StringVar()
-lbl = Label(gui, textvariable=hello)
-lbl.pack()
 
-gui.mainloop()
+if __name__ == '__main__':
+    MyApp().run()
